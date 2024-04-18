@@ -18,7 +18,7 @@ public class WeatherResource {
         this.weatherService = weatherService;
     }
     @GetMapping("/weather/{city}")
-    public @ResponseBody WeatherResponse weather(@PathVariable("city") String city) {
+    public @ResponseBody WeatherResponse weather(@PathVariable("city") String city) throws Exception {
         final WeatherRequestDetails weatherRequestDetails = WeatherRequestDetails.builder()
                 .city(city)
                 .build();
